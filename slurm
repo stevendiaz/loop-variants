@@ -10,7 +10,7 @@
 
 #SBATCH -p serial
 #SBATCH -J real_multiply_etd349     # Job name
-#SBATCH -o real_multiply_etd349.%j.out    # Specify stdout output file (%j expands to jobId)
+#SBATCH -o output/real_multiply_etd349.%j.out    # Specify stdout output file (%j expands to jobId)
 #SBATCH -N 1                     # Total number of nodes requested (16 cores/node)
 #SBATCH -n 1                     # Total number of tasks
 #SBATCH -t 01:00:00              # Run time (hh:mm:ss) - 1.5 hours

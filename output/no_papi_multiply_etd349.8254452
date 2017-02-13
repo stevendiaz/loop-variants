@@ -1,0 +1,90 @@
+++++++++++++++
++   i-j-k    +
++  50 x 50     +
+elapsed time = 90565 nanoseconds
+
+++++++++++++++
++   j-i-k    +
++  50 x 50     +
+elapsed time = 202439 nanoseconds
+
+++++++++++++++
++   j-k-i    +
++  50 x 50     +
+elapsed time = 132996 nanoseconds
+
+++++++++++++++
++   k-j-i    +
++  50 x 50     +
+elapsed time = 112601 nanoseconds
+
+++++++++++++++
++   i-k-j    +
++  50 x 50     +
+elapsed time = 45722 nanoseconds
+
+++++++++++++++
++   k-i-j    +
++  50 x 50     +
+elapsed time = 45975 nanoseconds
+
+++++++++++++++
++   i-j-k    +
++  200 x 200     +
+elapsed time = 5225296 nanoseconds
+
+++++++++++++++
++   j-i-k    +
++  200 x 200     +
+elapsed time = 14237422 nanoseconds
+
+++++++++++++++
++   j-k-i    +
++  200 x 200     +
+elapsed time = 9516948 nanoseconds
+
+++++++++++++++
++   k-j-i    +
++  200 x 200     +
+elapsed time = 9894518 nanoseconds
+
+++++++++++++++
++   i-k-j    +
++  200 x 200     +
+elapsed time = 3393141 nanoseconds
+
+++++++++++++++
++   k-i-j    +
++  200 x 200     +
+elapsed time = 3627763 nanoseconds
+
+++++++++++++++
++   i-j-k    +
++  2000 x 2000     +
+elapsed time = 41297219650 nanoseconds
+
+++++++++++++++
++   j-i-k    +
++  2000 x 2000     +
+elapsed time = 38156870151 nanoseconds
+
+++++++++++++++
++   j-k-i    +
++  2000 x 2000     +
+elapsed time = 202050363500 nanoseconds
+
+++++++++++++++
++   k-j-i    +
++  2000 x 2000     +
+elapsed time = 201960912141 nanoseconds
+
+++++++++++++++
++   i-k-j    +
++  2000 x 2000     +
+elapsed time = 5687902110 nanoseconds
+
+++++++++++++++
++   k-i-j    +
++  2000 x 2000     +
+elapsed time = 6557176521 nanoseconds
+
