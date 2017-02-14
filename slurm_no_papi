@@ -19,4 +19,4 @@
 # Loading modules in the script ensures a consistent environment.
 
 # Launch the executable nameno_papi_multiply
-./no_papi.out
+./no_papi.o

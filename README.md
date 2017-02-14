@@ -2,11 +2,20 @@
 
 ### How to compile
 
-In the stampede shell run 
+In the root directory run 
 
 ```
 $ module load papi
 $ make
+```
+
+### How to run
+
+In the root directory
+
+```
+$ make run
+$ make run_np
 ```
 
 
