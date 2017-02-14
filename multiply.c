@@ -13,15 +13,13 @@ void print_counters(long long* counters) {
             counters[6] );
 }
 
-void matrix_matrix_multiply(int N, int* PAPI_events) {
+void ijk(int N, int* PAPI_events) {
     double A[N][N], B[N][N], X[N][N];
     memset(A, 0, N*N*sizeof(double));
     memset(B, 0, N*N*sizeof(double));
     memset(X, 0, N*N*sizeof(double));
 
-    PAPI_library_init(PAPI_VER_CURRENT);
     int i, j, k;
-    int sum = 0;
     long long counters[7];
     printf("++++++++++++++\n");
     printf("+   i-j-k    +\n");
@@ -30,16 +28,21 @@ void matrix_matrix_multiply(int N, int* PAPI_events) {
     for (i = 0; i < N; i++) {
         for (j = 0; j < N; j++) {
             for (k = 0; k < N; k++) {
-                X[i][j] += A[i][k] + B[k][j];
+                X[i][j] += A[i][k] * B[k][j];
             }
         }
     }
     PAPI_stop_counters(counters, 7);
     print_counters(counters);
+}
 
+void jik(int N, int* PAPI_events) {
+    double A[N][N], B[N][N], X[N][N];
+    memset(A, 0, N*N*sizeof(double));
+    memset(B, 0, N*N*sizeof(double));
+    memset(X, 0, N*N*sizeof(double));
 
-    j, i, k = 0;
-    sum = 0;
+    int j, i, k = 0;
     long long counters_jik[7];
     printf("++++++++++++++\n");
     printf("+   j-i-k    +\n");
@@ -48,15 +51,21 @@ void matrix_matrix_multiply(int N, int* PAPI_events) {
     for (j = 0; j < N; j++) {
         for (i = 0; i < N; i++) {
             for (k = 0; k < N; k++) {
-                X[i][j] += A[i][k] + B[k][j];
+                X[i][j] += A[i][k] * B[k][j];
             }
         }
     }
     PAPI_stop_counters(counters_jik, 7);
     print_counters(counters_jik);
+}
 
-    j, k, i = 0;
-    sum = 0;
+void jki(int N, int* PAPI_events) {
+    double A[N][N], B[N][N], X[N][N];
+    memset(A, 0, N*N*sizeof(double));
+    memset(B, 0, N*N*sizeof(double));
+    memset(X, 0, N*N*sizeof(double));
+
+    int j, k, i = 0;
     long long counters_jki[7];
     printf("++++++++++++++\n");
     printf("+   j-k-i    +\n");
@@ -65,15 +74,21 @@ void matrix_matrix_multiply(int N, int* PAPI_events) {
     for (j = 0; j < N; j++) {
         for (k = 0; k < N; k++) {
             for (i = 0; i < N; i++) {
-                X[i][j] += A[i][k] + B[k][j];
+                X[i][j] += A[i][k] * B[k][j];
             }
         }
     }
     PAPI_stop_counters(counters_jki, 7);
     print_counters(counters_jki);
+}
 
-    k, j, i = 0;
-    sum = 0;
+void kji(int N, int* PAPI_events) {
+    double A[N][N], B[N][N], X[N][N];
+    memset(A, 0, N*N*sizeof(double));
+    memset(B, 0, N*N*sizeof(double));
+    memset(X, 0, N*N*sizeof(double));
+
+    int k, j, i = 0;
     long long counters_kji[7];
     printf("++++++++++++++\n");
     printf("+   k-j-i    +\n");
@@ -82,15 +97,21 @@ void matrix_matrix_multiply(int N, int* PAPI_events) {
     for (k = 0; k < N; k++) {
         for (j = 0; j < N; j++) {
             for (i = 0; i < N; i++) {
-                X[i][j] += A[i][k] + B[k][j];
+                X[i][j] += A[i][k] * B[k][j];
             }
         }
     }
     PAPI_stop_counters(counters_kji, 7);
     print_counters(counters_kji);
+}
 
-    i, k, j = 0;
-    sum = 0;
+void ikj(int N, int* PAPI_events) {
+    double A[N][N], B[N][N], X[N][N];
+    memset(A, 0, N*N*sizeof(double));
+    memset(B, 0, N*N*sizeof(double));
+    memset(X, 0, N*N*sizeof(double));
+
+    int i, k, j = 0;
     long long counters_ikj[7];
     printf("++++++++++++++\n");
     printf("+   i-k-j    +\n");
@@ -99,15 +120,21 @@ void matrix_matrix_multiply(int N, int* PAPI_events) {
     for (i = 0; i < N; i++) {
         for (k = 0; k < N; k++) {
             for (j = 0; j < N; j++) {
-                X[i][j] += A[i][k] + B[k][j];
+                X[i][j] += A[i][k] * B[k][j];
             }
         }
     }
     PAPI_stop_counters(counters_ikj, 7);
     print_counters(counters_ikj);
+}
 
-    k, i, j = 0;
-    sum = 0;
+void kij(int N, int* PAPI_events) {
+    double A[N][N], B[N][N], X[N][N];
+    memset(A, 0, N*N*sizeof(double));
+    memset(B, 0, N*N*sizeof(double));
+    memset(X, 0, N*N*sizeof(double));
+
+    int k, i, j = 0;
     long long counters_kij[7];
     printf("++++++++++++++\n");
     printf("+   k-i-j    +\n");
@@ -116,17 +143,24 @@ void matrix_matrix_multiply(int N, int* PAPI_events) {
     for (k = 0; k < N; k++) {
         for (i = 0; i < N; i++) {
             for (j = 0; j < N; j++) {
-                X[i][j] += A[i][k] + B[k][j];
+                X[i][j] += A[i][k] * B[k][j];
             }
         }
     }
     PAPI_stop_counters(counters_kij, 7);
     print_counters(counters_kij);
+}
 
+void matrix_matrix_multiply(int N, int* PAPI_events) {
+    ijk(N, PAPI_events);
+    jik(N, PAPI_events);
+    jki(N, PAPI_events);
+    kji(N, PAPI_events);
+    ikj(N, PAPI_events);
+    kij(N, PAPI_events);
 }
 
 int main(int args, char *argv[]) {
-    long long counters[7];
     int PAPI_events[] = {
         PAPI_L1_ICM,
         PAPI_L1_DCM,
@@ -136,9 +170,10 @@ int main(int args, char *argv[]) {
         PAPI_FP_INS,
         PAPI_TOT_CYC };
     int MATRIX_SIZES[] = {
-        50, 
-        200,
-        2000 };
+        6, 
+        10,
+        50 };
+    PAPI_library_init(PAPI_VER_CURRENT);
     int num_counters = PAPI_num_counters();
 
     printf("This system has %d available PAPI counters\n", num_counters);
