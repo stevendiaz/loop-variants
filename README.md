@@ -1,5 +1,13 @@
 # Assignment 1 CS377P
 
+### End to End Compile-Job Submit
+
+To compile both programs and submit both to SLURM, run the following in the project root directory
+
+```
+$ make end_to_end
+```
+
 ### How to compile
 
 In the root directory run 
