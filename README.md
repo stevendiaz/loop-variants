@@ -31,14 +31,4 @@ $ make run     # Runs PAPI timers on matrix multiply
 $ make run_np  # Runs clock_gettime
 ```
 
-### How to submit a SLURM job
-
-In the root directory
-
-```
-$ sbatch slurm_matrix_multiply
-$ sbatch slurm_no_papi
-```
-
-Output will be in the `output/` directory
 
