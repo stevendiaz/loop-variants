@@ -1,4 +1,9 @@
-# Assignment 1 CS377P
+# Loop Variant experiments with Matrix Matrix multiply
+
+### Description
+
+This program uses the PAPI library to measure the performance differences
+between the 6 loop variants. (ijk, ikj, jik, jki, kij, kji)
 
 ### End to End Compile-Job Submit
 
