@@ -4,7 +4,6 @@
 
 #define BILLION 1000000000L
 
-
 void matrix_matrix_multiply(int N) {
     double A[N][N], B[N][N], X[N][N];
     memset(A, 0, N*N*sizeof(double));
@@ -126,7 +125,7 @@ void matrix_matrix_multiply(int N) {
 
 int main(int args, char *argv[]) {
     int MATRIX_SIZES[] = {
-        50, 
+        50,
         200,
         2000 };
 
